@@ -10,16 +10,17 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>ASDASD Shop</title>
+        <link rel="icon" href="https://www.bluematrixmedia.com/wp-content/uploads/2015/12/Retail-eCommerce-Icon.png">
         <link href="<c:url value="/resources/css/bootstrap.css" />" rel="stylesheet">
     </head>
     <body>
         <jsp:include page="head.jsp"/> 
         <div class="container">
-            <h1>Registrasi berhasil</h1>
+            <h1>Registrasi Berhasil</h1>
             ${data.firstName} ${data.lastName}
-            <p>
+            <%--<p>
                 <a href="${pageContext.request.contextPath}/login">Please Login</a>
-            </p>
+</p>--%>
         </div>
     </body>
 </html>

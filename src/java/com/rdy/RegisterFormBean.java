@@ -2,7 +2,7 @@ package com.rdy;
 
 /**
  *
- * @author zulfahmi
+ * @author user
  */
 public class RegisterFormBean {
     
@@ -10,6 +10,10 @@ public class RegisterFormBean {
     private String lastName;
     private String username;
     private String password;
+    private String alamat;
+    private String email;
+    private String notelp;
+    
 
     /**
      * @return the firstName
@@ -44,6 +48,48 @@ public class RegisterFormBean {
      */
     public String getUsername() {
         return username;
+    }
+
+    /**
+     * @return the alamat
+     */
+    public String getAlamat() {
+        return alamat;
+    }
+
+    /**
+     * @param alamat the alamat to set
+     */
+    public void setAlamat(String alamat) {
+        this.alamat = alamat;
+    }
+
+    /**
+     * @return the email
+     */
+    public String getEmail() {
+        return email;
+    }
+
+    /**
+     * @param email the email to set
+     */
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    /**
+     * @return the notelp
+     */
+    public String getNotelp() {
+        return notelp;
+    }
+
+    /**
+     * @param notelp the notelp to set
+     */
+    public void setNotelp(String notelp) {
+        this.notelp = notelp;
     }
 
     /**

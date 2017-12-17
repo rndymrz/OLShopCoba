@@ -6,7 +6,7 @@
 package com.rdy;
 
 import com.rdy.dao.UserService;
-import com.rdy.model.User;
+import com.rdy.model.TblUser;
 import com.rdy.utils.PasswordDigest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -32,13 +32,16 @@ public class RegistrationController {
     @RequestMapping(value="/save") 
     public String saveRegistration(@ModelAttribute("registerBean") RegisterFormBean registerBean, 
             Model model) {
-        User user = new User();
+        TblUser user = new TblUser();
         String encryptedPassword = 
                 PasswordDigest.createEncryptedPassword(registerBean.getPassword());
-        user.setFirstName(registerBean.getFirstName());
-        user.setLastName(registerBean.getLastName());
+        user.setFirstname(registerBean.getFirstName());
+        user.setLastname(registerBean.getLastName());
         user.setUsername(registerBean.getUsername());
-        user.setPassword(encryptedPassword);
+        user.setPassword(registerBean.getPassword());
+        user.setAlamat(registerBean.getAlamat());
+        user.setEmail(registerBean.getEmail());
+        user.setNotelp(registerBean.getNotelp());
         
         us.saveUser(user);
         

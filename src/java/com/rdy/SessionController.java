@@ -21,7 +21,8 @@ public class SessionController {
     @RequestMapping()
     public String addSomething(HttpServletRequest request) {
         HttpSession hs = request.getSession();
-        hs.setAttribute("pesan", "Daftar Barang");
+        hs.setAttribute("dftrprdk", "Daftar Barang");
+        
 //        Employee staf = new Employee("Rini S", 450000);
 //        hs.setAttribute("staf", staf);
 //        Cart cart = (Cart) hs.getAttribute("cart");

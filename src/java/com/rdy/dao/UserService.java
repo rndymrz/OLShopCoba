@@ -5,7 +5,7 @@
  */
 package com.rdy.dao;
 
-import com.rdy.model.User;
+import com.rdy.model.TblUser;
 import java.util.logging.Logger;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -28,7 +28,7 @@ public class UserService {
     private EntityManager em;
 
     @Transactional
-    public void saveUser(User user) {
+    public void saveUser(TblUser user) {
         em = emf.createEntityManager();
         em.getTransaction().begin();
         em.persist(user);
@@ -36,13 +36,13 @@ public class UserService {
         em.close();
     }
 
-    public User findByUsername(String username) {
-        User user = new User();
+    public TblUser findByUsername(String username) {
+        TblUser user = new TblUser();
         try {
             em = emf.createEntityManager();
             Query query = em.createQuery("Select u from User u where u.username = :username");
             query.setParameter("username", username);
-            user = (User) query.getSingleResult();
+            user = (TblUser) query.getSingleResult();
         } catch (NoResultException nre) {
             logger.severe("Username tidak ada");
         }

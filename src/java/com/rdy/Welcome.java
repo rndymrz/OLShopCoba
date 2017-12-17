@@ -15,7 +15,7 @@ public class Welcome {
     
     @RequestMapping()
     public String welcome(Model model) {
-        model.addAttribute("msg", "Selamat datang di situs ini");
+        model.addAttribute("msg", "Selamat datang di ASDASD Shop");
         return "welcome";
     }
     

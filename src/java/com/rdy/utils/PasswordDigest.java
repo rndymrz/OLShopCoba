@@ -10,7 +10,7 @@ import java.security.NoSuchAlgorithmException;
 
 /**
  *
- * @author zulfahmi
+ * @author user
  */
 public class PasswordDigest {
        public static String createEncryptedPassword(String passwordToHash) {

@@ -6,7 +6,7 @@
 package com.rdy;
 
 import com.rdy.dao.UserService;
-import com.rdy.model.User;
+import com.rdy.model.TblUser;
 import com.rdy.utils.PasswordDigest;
 import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,7 +31,7 @@ public class LoginController {
 
     @RequestMapping(value = "/check")
     public String checkLogin(HttpSession session, @ModelAttribute("loginBean") LoginBean loginBean, Model model) {
-        User user = us.findByUsername(loginBean.getUsername());
+        TblUser user = us.findByUsername(loginBean.getUsername());
         if(user.getUsername()==null) {
             model.addAttribute("errMsg", "Wrong Username");
             return "login";
