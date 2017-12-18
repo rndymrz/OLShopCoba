@@ -6,12 +6,14 @@
 package com.rdy.model;
 
 import java.io.Serializable;
+import java.util.List;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
@@ -40,6 +42,8 @@ public class TblProduct implements Serializable {
     private Double harga;
     @Column(name = "NAMAPRODUCT")
     private String namaproduct;
+    @ManyToMany(mappedBy = "tblProductList")
+    private List<TblCart> tblCartList;
 
     public TblProduct() {
     }
@@ -70,6 +74,14 @@ public class TblProduct implements Serializable {
 
     public void setNamaproduct(String namaproduct) {
         this.namaproduct = namaproduct;
+    }
+
+    public List<TblCart> getTblCartList() {
+        return tblCartList;
+    }
+
+    public void setTblCartList(List<TblCart> tblCartList) {
+        this.tblCartList = tblCartList;
     }
 
     @Override

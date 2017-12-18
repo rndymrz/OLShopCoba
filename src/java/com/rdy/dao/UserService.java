@@ -40,7 +40,7 @@ public class UserService {
         TblUser user = new TblUser();
         try {
             em = emf.createEntityManager();
-            Query query = em.createQuery("Select u from User u where u.username = :username");
+            Query query = em.createQuery("Select u from TblUser u where u.username = :username");
             query.setParameter("username", username);
             user = (TblUser) query.getSingleResult();
         } catch (NoResultException nre) {

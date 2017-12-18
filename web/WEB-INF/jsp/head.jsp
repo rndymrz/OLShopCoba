@@ -50,7 +50,7 @@
 
         <h1 align = "center" >ASDASD Online Shop</h1> 
         <p>A New OLShop in Town</p> 
-        <%--<div><a href="${pageContext.request.contextPath}">Home</a></div>--%>
+        
         <c:if test="${not empty sessionScope.user}">
             <div><a href="${pageContext.request.contextPath}/logout">Logout</a></div>
         </c:if>

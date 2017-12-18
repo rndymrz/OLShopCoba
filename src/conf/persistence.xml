@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
-  <persistence-unit name="olshopPU" transaction-type="RESOURCE_LOCAL">
+  <persistence-unit name="OLShopPU" transaction-type="RESOURCE_LOCAL">
     <provider>org.hibernate.ejb.HibernatePersistence</provider>
-    <class>com.rdy.model.Cart</class>
-    <class>com.rdy.model.Product</class>
-    <class>com.rdy.model.TblProduct</class>
     <class>com.rdy.model.TblCart</class>
     <class>com.rdy.model.TblUser</class>
-    <class>com.rdy.DetailProduk</class>
+    <class>com.rdy.model.Sequence</class>
+    <class>com.rdy.model.TblProduct</class>
     <exclude-unlisted-classes>false</exclude-unlisted-classes>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:derby://localhost:1527/OLShopDB"/>
@@ -15,6 +13,7 @@
       <property name="javax.persistence.jdbc.driver" value="org.apache.derby.jdbc.ClientDriver"/>
       <property name="javax.persistence.jdbc.password" value="app"/>
       <property name="hibernate.cache.provider_class" value="org.hibernate.cache.NoCacheProvider"/>
+      <property name="hibernate.hbm2ddl.auto" value="update"/>
     </properties>
   </persistence-unit>
 </persistence>

@@ -38,7 +38,7 @@ public class RegistrationController {
         user.setFirstname(registerBean.getFirstName());
         user.setLastname(registerBean.getLastName());
         user.setUsername(registerBean.getUsername());
-        user.setPassword(registerBean.getPassword());
+        user.setPassword(encryptedPassword);
         user.setAlamat(registerBean.getAlamat());
         user.setEmail(registerBean.getEmail());
         user.setNotelp(registerBean.getNotelp());

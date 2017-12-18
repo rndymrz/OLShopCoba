@@ -6,12 +6,16 @@
 package com.rdy.model;
 
 import java.io.Serializable;
+import java.util.List;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
@@ -40,6 +44,11 @@ public class TblCart implements Serializable {
     // @Max(value=?)  @Min(value=?)//if you know range of your decimal fields consider using these annotations to enforce field validation
     @Column(name = "TOTALHARGA")
     private Double totalharga;
+    @JoinTable(name = "TBL_CART_TBL_PRODUCT", joinColumns = {
+        @JoinColumn(name = "CART_ID", referencedColumnName = "ID")}, inverseJoinColumns = {
+        @JoinColumn(name = "LISTITEMS_ID", referencedColumnName = "ID")})
+    @ManyToMany
+    private List<TblProduct> tblProductList;
 
     public TblCart() {
     }
@@ -70,6 +79,14 @@ public class TblCart implements Serializable {
 
     public void setTotalharga(Double totalharga) {
         this.totalharga = totalharga;
+    }
+
+    public List<TblProduct> getTblProductList() {
+        return tblProductList;
+    }
+
+    public void setTblProductList(List<TblProduct> tblProductList) {
+        this.tblProductList = tblProductList;
     }
 
     @Override
