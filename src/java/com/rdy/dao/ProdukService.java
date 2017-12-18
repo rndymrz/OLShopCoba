@@ -50,7 +50,7 @@ public class ProdukService {
     
     public List<TblProduct> findAll(){
         List<TblProduct> prod;
-        prod = this.em.createNamedQuery("Product.findAll").getResultList();
+        prod = this.em.createNamedQuery("TblProduct.findAll").getResultList();
         return prod;
     }
     

@@ -19,7 +19,7 @@
         <div class="container">
             <h1>${user.username}, Anda berhasil Login</h1>
             
-            <p><a href="${pageContext.request.contextPath}/product"> Daftar Product</a></p>
+            <p><a href="${pageContext.request.contextPath}/product/all"> Daftar Produk</a></p>
         </div>
     </body>
 </html>

@@ -41,9 +41,12 @@
    
     <ul class="topnav">
         <li><a class="active" href="${pageContext.request.contextPath}">Home</a></li>
-        <li><a href="${pageContext.request.contextPath}/product">Daftar Produk</a></li>
+        <li><a href="${pageContext.request.contextPath}/product/all">Daftar Produk</a></li>
         <li><a href="${pageContext.request.contextPath}/detailproduk">Detail Produk</a></li>
-        <li class="right" ><a href="${pageContext.request.contextPath}/cart">Cart</a></li>
+        <li class="right" ><a href="${pageContext.request.contextPath}/cart/show">Cart : ${cart.carts.size()}</a></li>
+        <c:if test="${not empty sessionScope.user}">
+            <li class="right"><a href="${pageContext.request.contextPath}/logout">Logout</a></li>
+        </c:if>
     </ul>
 
     <div class="jumbotron"  style="background-image: url(http://www.truthmedia.gr/sites/default/files/online-shopping-ecommerce-ss-1920_1.png); background-size: 100%;">
@@ -51,9 +54,7 @@
         <h1 align = "center" >ASDASD Online Shop</h1> 
         <p>A New OLShop in Town</p> 
         
-        <c:if test="${not empty sessionScope.user}">
-            <div><a href="${pageContext.request.contextPath}/logout">Logout</a></div>
-        </c:if>
+        
 
     </div>
 

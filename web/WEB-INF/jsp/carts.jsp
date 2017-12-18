@@ -1,16 +1,15 @@
 <%-- 
-    Document   : product
-    Created on : Dec 14, 2017, 10:20:14 AM
+    Document   : carts
+    Created on : Dec 18, 2017, 2:27:54 PM
     Author     : user
 --%>
-
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Product</title>
+        <title>Carts</title>
         <link rel="icon" href="https://www.bluematrixmedia.com/wp-content/uploads/2015/12/Retail-eCommerce-Icon.png">
         <link href="<c:url value="/resources/css/bootstrap.css" />" rel="stylesheet">
 
@@ -38,45 +37,48 @@
                 color: white;
             }
         </style>
-
     </head>
     <body>
+
         <jsp:include page="head.jsp"/> 
+
         <div class="container">
+            
+            <div class="table-responsive">  
+            
             <table id="produk">
-                <tr>
-                    <th>Nama Produk</th>
-                    <th>Harga</th>
-                    <th>Gambar</th>
-                    <th>Aksi</th>
-
-                    <c:forEach var="d" items="${product}">
-                    </tr>
+                <thead>
                     <tr>
-                        <td>${d.namaproduct}</td>
-                        <td>${d.harga}</td>
-                        <td><img src="<c:url value="/resources/mawar/${d.gambar}" />" width="100" height="200"/> </td>
-                        <td> 
-                            <c:if test="${empty sessionScope.user}">
-                        <li><a href="${pageContext.request.contextPath}/login"><button class="btn btn-primary" >Add to cart</button></a></li>
+                        <th>Nama Produk</th>
+                        <th>Harga</th>
+                        <th></th>
 
-
-                    </c:if>
-                    <c:if test="${not empty sessionScope.user}">
-                        <a href="${pageContext.request.contextPath}/cart/add/${d.id}" ><button class="btn btn-primary">Add to cart</button> </a>
-
-                    </c:if> 
-                    </td>   
                     </tr>
-                </c:forEach>
+                </thead>
+                <tbody>
+                    <c:forEach var="d" items="${cart.carts}">
+                        <tr>
+
+                            <td>${d.value.namaproduct}</td>
+                            <td>${d.value.harga}</td>
+                            <td><a href="${pageContext.request.contextPath}/cart/${d.value.id}/${d.key}"><i class="fa d-inline fa-lg fa-shopping-cart"></i> Hapus dari Cart </a></td>
+
+                        </tr>
+                    </c:forEach>
+
+                
+
+                </tbody>
             </table>
-
-
+            
+            <h1>Total Belanjaan : Rp ${carts}</h1>
+            
         </div>
 
+            <button href="${pageContext.request.contextPath}/product" class="btn btn-danger">Bayar</button>
+            
+        </div>
 
-
-
-
+            
     </body>
 </html>

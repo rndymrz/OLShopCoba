@@ -46,7 +46,7 @@ public class ProdukController {
     @RequestMapping()
     public String addSomething(HttpServletRequest request) {
         HttpSession hs = request.getSession();
-        hs.setAttribute("dftrprdk", "Daftar Barang");
+        hs.setAttribute("dftrprdk", "Daftar Produk");
 
         return "product";
                 

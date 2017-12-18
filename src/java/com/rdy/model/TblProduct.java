@@ -28,7 +28,9 @@ import javax.persistence.Table;
     @NamedQuery(name = "TblProduct.findAll", query = "SELECT t FROM TblProduct t")
     , @NamedQuery(name = "TblProduct.findById", query = "SELECT t FROM TblProduct t WHERE t.id = :id")
     , @NamedQuery(name = "TblProduct.findByHarga", query = "SELECT t FROM TblProduct t WHERE t.harga = :harga")
+    , @NamedQuery(name = "TblProduct.findByGambar", query = "SELECT t FROM TblProduct t WHERE t.gambar= :gambar")
     , @NamedQuery(name = "TblProduct.findByNamaproduct", query = "SELECT t FROM TblProduct t WHERE t.namaproduct = :namaproduct")})
+
 public class TblProduct implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -42,6 +44,8 @@ public class TblProduct implements Serializable {
     private Double harga;
     @Column(name = "NAMAPRODUCT")
     private String namaproduct;
+    @Column(name = "GAMBAR")
+    private String gambar;
     @ManyToMany(mappedBy = "tblProductList")
     private List<TblCart> tblCartList;
 
@@ -62,6 +66,20 @@ public class TblProduct implements Serializable {
 
     public Double getHarga() {
         return harga;
+    }
+
+    /**
+     * @return the gambar
+     */
+    public String getGambar() {
+        return gambar;
+    }
+
+    /**
+     * @param gambar the gambar to set
+     */
+    public void setGambar(String gambar) {
+        this.gambar = gambar;
     }
 
     public void setHarga(Double harga) {
