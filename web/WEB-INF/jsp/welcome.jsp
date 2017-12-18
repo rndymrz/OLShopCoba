@@ -20,17 +20,6 @@
         <div class="container">
             <h1>${msg}</h1>
             
-            <p>
-                <a href="${pageContext.request.contextPath}/register">Please Register</a>
-            </p>
-            
-                <c:if test="${empty sessionScope.user}">
-
-
-                    <p>
-                        <a href="${pageContext.request.contextPath}/login">Please Login</a>
-                    </p>
-                </c:if>
             
         </div>
     </body>

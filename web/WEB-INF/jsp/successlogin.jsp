@@ -17,9 +17,9 @@
     <body>
         <jsp:include page="head.jsp"/> 
         <div class="container">
-            <h1>${user.username}, Anda berhasil Login</h1>
+            <h1>${user.username}, We've Got Some New Stuffs Coming In!! Check it Out!!!</h1>
             
-            <p><a href="${pageContext.request.contextPath}/product/all"> Daftar Produk</a></p>
+            <p><h1 align="center"><a href="${pageContext.request.contextPath}/product/all">CLICK HERE!!!!</a></h1></p>
         </div>
     </body>
 </html>
